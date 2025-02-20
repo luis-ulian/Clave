@@ -1,0 +1,31 @@
+article{
+    width: clamp(200px, 50%, 600px);
+}
+
+.singup {
+    min-height: 100vh;
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6%;
+    width: 100%;
+    gap: 3%;
+    text-align: center;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1000px rgba(29, 10, 111, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
