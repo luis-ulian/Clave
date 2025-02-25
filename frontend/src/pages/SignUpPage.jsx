@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {useAuthStore} from '../store/useAuthStore'
 import "../styles/SignUpPage.css"
-import {Eye, EyeOff, Lock} from "lucide-react"
+import {Eye, EyeOff, Loader, Loader2, Lock} from "lucide-react"
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -30,7 +30,7 @@ const SignUpPage = () => {
             <div className="logoController group">
               <img src="pngegg.png" alt="atizap2-logo" className='logo group-hover:bg-primary/20 transition-colors'/>
               <h1 className='text-2xl font-bold mt-2'>Criar conta</h1>
-              <p className='text-base-content/60'>Comece agora a usar o Conversinhas!</p>
+              <p className='text-base-content/60'>Comece agora a usar o Clave!</p>
             </div>
           </div>
 
@@ -82,7 +82,7 @@ const SignUpPage = () => {
                 <input 
                   type= {showPassword ? "text" : "password"} 
                   className='input input-bordered w-full pl-10 text-base-content/40'
-                  placeholder='*******'
+                  placeholder='•••••••••••'
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value})}
                  />
@@ -97,8 +97,10 @@ const SignUpPage = () => {
                  </button>
               </div>
             </div>
-
-            
+            <button type='submit' className='submit' disabled={isSigningUp}>
+              {isSigningUp ? (<Loader2 className='size-5 animate-spin'/>) : 
+              ("Criar conta")}
+            </button>
           </form>
         </div>
       </div>
