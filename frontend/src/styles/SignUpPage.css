@@ -2,9 +2,6 @@
     display: grid;
     align-items: center;
     min-height: 100vh;
-    @media (width >= 1024px) {   
-        grid-template-columns: repeat(2, minmax(0,1fr));
-    }
 }
 
 .leftSide {
@@ -67,6 +64,7 @@
     right: 0px;
     padding-right: 6px;
     inset-block: 0px;
+    cursor: pointer;
 }
 
 .img {
@@ -89,11 +87,28 @@
     background-color: rgba(166, 0, 255, 0.2);
     border-radius: 5px;
     padding: 5%;
+    transition-duration: 0.150s;
+}
+.submit:hover {
+    background-color: blueviolet;
+}
+.submit:disabled{
+    cursor: not-allowed;
 }
 
 .input:is(:-webkit-autofill, :autofill) {
     box-shadow: 0 0 0 30px black inset;
   -webkit-box-shadow: 0 0 0 30px black inset;
+}
+
+.login {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.loginController > a{ 
+    color: inset 0 0 0 1000px rgba(166, 0, 255, 0.2);
+    text-decoration: underline;
 }
 
 label {
