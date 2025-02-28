@@ -19,12 +19,19 @@ const SignUpPage = () => {
     if (!formData.email.trim()) return toast.error("Email precisa ser preenchido");
     if (!/\S+@\S+\.\S/.test(formData.email)) return toast.error("Email inválido");
     if (!formData.password) return toast.error("Senha precisa ser preenchida");
-    if (!formData.password.length < 6) return toast.error("Senha precisa ter um mínimo de 6 caracteres")
+    if (!formData.password.length < 6) return toast.error("Senha precisa ter um mínimo de 6 caracteres");
+
+    return true;
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const success = validateForm();
+
+    if (success === true) signup(formData);
   }
+  
   return (
     <div className='signup'>
       {/* LEFT SIDE */}
