@@ -42,6 +42,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-duration: .4s;
 }
 
 .inputController {
@@ -55,6 +56,13 @@
     display: flex;
     left: 0px;
     inset-block: 0px;
+    pointer-events: none;
+}
+
+.img {
+    width: 20px;
+    height: 20px;
+    color: color-mix(in oklab, var(--color-base-content) 40%, transparent);
 }
 
 .showPassBtn {
@@ -67,11 +75,6 @@
     cursor: pointer;
 }
 
-.img {
-    width: 20px;
-    height: 20px;
-    color: color-mix(in oklab, var(--color-base-content) 40%, transparent);
-}
 
 .submit {
     width: 100%;
@@ -87,7 +90,7 @@
     background-color: rgba(166, 0, 255, 0.2);
     border-radius: 5px;
     padding: 5%;
-    transition-duration: 0.150s;
+    transition-duration: 0.4s;
 }
 .submit:hover {
     background-color: blueviolet;

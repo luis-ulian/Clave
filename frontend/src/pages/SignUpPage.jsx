@@ -19,7 +19,8 @@ const SignUpPage = () => {
     if (!formData.email.trim()) return toast.error("Email precisa ser preenchido");
     if (!/\S+@\S+\.\S/.test(formData.email)) return toast.error("Email inválido");
     if (!formData.password) return toast.error("Senha precisa ser preenchida");
-    if (!formData.password.length < 6) return toast.error("Senha precisa ter um mínimo de 6 caracteres");
+    console.log(formData.password.length)
+    if (formData.password.length <= 5) return toast.error("Senha precisa ter um mínimo de 6 caracteres");
 
     return true;
   }
@@ -40,7 +41,7 @@ const SignUpPage = () => {
           {/* LOGO */ }
           <div className='logoDiv'>
             <div className="logoController group">
-              <img src="pngegg.png" alt="atizap2-logo" className='logo group-hover:bg-violet-600 transition-colors'/>
+              <img src="pngegg.png" alt="atizap2-logo" className='logo group-hover:bg-violet-600'/>
               <h1 className='text-2xl font-bold mt-2'>Criar conta</h1>
               <p className='text-base-content/60'>Comece agora a usar o Clave!</p>
             </div>
@@ -52,9 +53,6 @@ const SignUpPage = () => {
                 <span className='label-text'>Nome completo</span>
               </label>
               <div className='inputController'>
-                <div className="inputImg">
-                  <img src="user.png" alt="profileImg" className='img'/>
-                </div>
                 <input
                   type="text"
                   className={`input input-bordered w-full pl-10`}
@@ -62,6 +60,9 @@ const SignUpPage = () => {
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 />
+                <div className="inputImg">
+                  <img src="user.png" alt="profileImg" className='img'/>
+                </div>
               </div>
             </div>
 
@@ -70,9 +71,6 @@ const SignUpPage = () => {
                 <span className="label-text">Email</span>
               </label>
               <div className="inputController">
-                <div className="inputImg">
-                  <img src="email-line-icon-png.png" alt="mail img" className="img" />
-                </div>
                 <input
                   type="email"
                   className={`input input-bordered w-full pl-10`}
@@ -80,17 +78,18 @@ const SignUpPage = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
+                <div className="inputImg">
+                  <img src="email-line-icon-png.png" alt="mail img" className="img" />
+                </div>
               </div>
             </div>
 
             <div className="form-control">
               <label className="label">
-                <span className="label-tex">Senha</span>
+                <span className="label-text">Senha</span>
               </label>
               <div className="inputController">
-                <div className="inputImg">
-                  <Lock className ="img"></Lock>
-                </div>
+                
                 <input 
                   type= {showPassword ? "text" : "password"} 
                   className='input input-bordered w-full pl-10 text-base-content/40'
@@ -98,15 +97,18 @@ const SignUpPage = () => {
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value})}
                  />
-                 <button
-                  type='button'
-                  className='showPassBtn'
-                  onClick={() => setShowPassword(!showPassword)}>
+                <button
+                type='button'
+                className='showPassBtn'
+                onClick={() => setShowPassword(!showPassword)}>
 
                   {showPassword ? (<EyeOff className='img'/>
                   ) : (<Eye className='img'/>)}
-                  
-                 </button>
+                
+                </button>
+                <div className="inputImg">
+                  <Lock className ="img"></Lock>
+                </div>
               </div>
             </div>
             <button type='submit' className='submit' disabled={isSigningUp}>
