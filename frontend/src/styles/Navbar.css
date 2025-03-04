@@ -1,0 +1,25 @@
+.header {
+    background-color: #341943aa;
+    border-color: #2a316aaa;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 40;
+}
+
+.headerController {
+    margin-inline: auto;
+    padding-inline: 16px;
+    height: 64px;
+
+    width: 100%;
+    @media (width >= 40rem) {
+        max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+        max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+        max-width: 64rem;
+    }
+}
