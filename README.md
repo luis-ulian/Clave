@@ -2,3 +2,5 @@
 Clave is a encrypted messager app, that's made using MongoDB, Express, React, Node.js, css, tailwindcss, react hot toast, jsonwebtoken, bcrypt (planning on change to post quantum cryptography) and cloudinary
 
 Majority of frontend is on css (to learn more) and the other part is on tailwindcss.
+
+<h2>(EM ANDAMENTO)</h2>
